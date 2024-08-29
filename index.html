@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rádio ao Vivo</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: black;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            background-color:black;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            max-width: 800px;
+            width: 100%;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 32px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .radio-list {
+            margin-bottom: 20px;
+        }
+
+        .radio-list button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .radio-list button:hover {
+            background-color: #0056b3;
+        }
+
+        iframe {
+            width: 100%;
+            height: 120px; /* Altura padrão ajustada */
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .footer {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                height: 100px; /* Ajuste para telas menores */
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            iframe {
+                height: 80px; /* Ajuste para dispositivos muito pequenos */
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Escolha a Rádio ao Vivo</h1>
+        
+        <div class="radio-list">
+            <button onclick="playRadio('https://www.radios.com.br/aovivo/radio-bandeirantes-909-fm-863-fm/10410', 'Rádio Bandeirantes')">Rádio Bandeirantes</button>
+            <button onclick="playRadio('https://jovempan.com.br/jovem-pan-ao-vivo', 'Jovem Pan')">Jovem Pan</button>
+            <button onclick="playRadio('https://www.radios.com.br/aovivo/radio-cbn-sao-paulo-905-fm/8816', 'Rádio CBN')">Rádio CBN</button>
+            <button onclick="playRadio('https://www.radios.com.br/aovivo/radio-bandnews-sp-969-fm/24477', 'Rádio BandNews')">Rádio BandNews</button>
+        </div>
+
+        <iframe id="radioPlayer" src="" allow="autoplay; encrypted-media"></iframe>
+        
+        <div class="footer">
+            © 2024 Rádio ao Vivo. Todos os direitos reservados. <br>
+            <a href="https://www.radios.com.br/">Visite nosso site</a>
+        </div>
+    </div>
+
+    <script>
+        function playRadio(url, title) {
+            var iframe = document.getElementById('radioPlayer');
+            iframe.src = url;
+            iframe.style.height = '300px'; // Define a altura padrão
+        }
+    </script>
+</body>
+</html>
+
